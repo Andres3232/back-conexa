@@ -25,14 +25,14 @@ export const validarJWT = async (req: Request, res: Response, next: NextFunction
         if ( !user ) {
         //@ts-ignore
             return res.status(401) ({
-                msg: 'Token no valido -user no existe DB'
+                msg: ' -user no existe DB'
             })
         }
 
         //Verificar si el uid tiene estado en true
         if( !user.estado ) {
             return res.status(401).json({
-                msg: 'Token no valido -user con estado:false'
+                msg: '-user con estado:false'
             })
         }
 

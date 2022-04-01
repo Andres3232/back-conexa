@@ -22,8 +22,6 @@ export const generarJWT = ( uid = '' ) => {
 
     })
 
-
-
 }
 
 

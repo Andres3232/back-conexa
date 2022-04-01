@@ -4,6 +4,18 @@ import { userDAO } from '../DAO/daoUser';
 import bcryptjs from 'bcryptjs'
 
 
+const getUser =async (req: Request, res: Response, next: NextFunction): Promise<Response | void>=> {
+    
+    try {
+
+        const users = await userDAO.getAll();
+        return res.status(200).json({users});
+        
+    } catch (error) {
+        console.log(error);
+    }
+
+}
 const userCreate =async (req: Request, res: Response, next: NextFunction): Promise<Response | void>=> {
     
     try {
@@ -15,10 +27,10 @@ const userCreate =async (req: Request, res: Response, next: NextFunction): Promi
         return res.status(200).json(response);
         
     } catch (error) {
-        next(error);
+        console.log(error);
     }
 
 }
 
 
-export {userCreate}
+export {userCreate,getUser}

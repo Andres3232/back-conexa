@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config(); //LIIBRERIA PARA .ENV
 import server from './server/index';
 import { environment } from './configuration/environment';
 

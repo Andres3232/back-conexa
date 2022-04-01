@@ -1,9 +1,6 @@
 import mongoose from 'mongoose';
 import  {environment}  from '../configuration/environment'
 
-
-
-
 const uri = `mongodb+srv://${environment.MONGO_USER}:${environment.MONGO_PASSWORD}@${environment.MONGO_URL}/${environment.DB_NAME || ''}`;
 
 console.log('uri',uri);

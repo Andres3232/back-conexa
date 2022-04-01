@@ -31,7 +31,7 @@ const login =async (req: Request, res: Response, next: NextFunction): Promise<Re
         const validPassword = bcryptjs.compareSync( password, user.password );
         if ( !validPassword ) {
             return res.status(400).json({
-                msg: 'Usuario / Password no son correctos - password'
+                msg: 'Password no es correcto'
             });
         }
 
