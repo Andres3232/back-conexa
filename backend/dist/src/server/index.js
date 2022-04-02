@@ -14,7 +14,6 @@ const database_1 = require("../database");
 const server = express_1.default();
 server.use(express_1.default.json());
 server.use(cors_1.default());
-server.use(express_1.default.static('public'));
 server.get('/', (req, res) => res.send('Challenge Andres Murgo is up!!'));
 swagger_1.default('/swagger', server);
 server.use('/api/user', user_1.default);

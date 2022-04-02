@@ -2,12 +2,13 @@
   "name": "back",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "engines": { "node": "14.16.1" },
   "scripts": {
-    "start": "ts-node src/app.ts",
+    "start": "node dist/src/app.js",
+    "dev": "ts-node src/app.ts",
     "postinstall": "tsc",
-    "watch-node": "nodemon dist/index.js",
+    "watch-node": "nodemon dist/app.js",
     "watch-ts": "tsc -w",
     "build": "tsc -p tsconfig.json"
   },
