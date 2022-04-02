@@ -11,6 +11,7 @@ import { connect_mongo } from '../database';
 const server = express();
 server.use(express.json());
 
+connect_mongo();
 server.use(cors());
 
 server.get('/', (req: Request, res: Response) => res.send('Challenge Andres Murgo is up!!'));
@@ -21,6 +22,5 @@ server.use('/api/login', auth);
 server.use('/api/photos', photos);
 server.use('/api/posts', posts);
 
-connect_mongo();
 
 export default server;

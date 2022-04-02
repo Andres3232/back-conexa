@@ -1,6 +1,6 @@
-require('dotenv').config(); //LIIBRERIA PARA .ENV
-import server from './server/index';
+require('dotenv').config(); 
 import { environment } from './configuration/environment';
+import server from './server/index';
 
 
 const PORT = environment.PORT;
