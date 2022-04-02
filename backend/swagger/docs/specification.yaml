@@ -1,0 +1,169 @@
+openapi: 3.0.0
+info:
+    title: Api backend
+    description: Api that exposes 2 user endpoints, one to create and the other to bring all the users in the base, it also exposes 2 more endpoints that bring information from public apis. Language Node.Js
+    contact:
+        name: Andres Murgo
+        email: andresmurgo@gmail.com
+    version: 0.1.0
+servers:
+    - url: http://localhost:8080
+tags:
+    - name: Api Bacckend
+paths:
+    /api/login:
+        post:
+            tags:
+                - Login
+            summary: Login
+            description: login with JWT
+            requestBody:
+              description: Information sent in the validation method
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/body'
+                  example:
+                            correo: andresmurgo@gmail.com,
+                            password: '123456'
+              required: true
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            example:
+                                    -   user:
+                                          nombre: Andres Murgo
+                                          correo: andresmurgo@gmail.com
+                                          estado: true
+                                          rol: ADMIN_ROLE
+                                          uid: 62470531475a79052be123a6
+                                        token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MjQ3MDUzMTQ3NWE3OTA1MmJlMTIzYTYiLCJpYXQiOjE2NDg4OTkxODUsImV4cCI6MTY0ODkxMzU4NX0.40aE-2ZekkntWTm3h3bzCSE8Q8gVD8JBz-CCn6OZpi8
+                400:
+                    description: Bad Request
+                    content:
+                        application/json:
+                            example:
+                                msg: El correo no es correcto
+    /api/user/create:
+            post:
+                tags:
+                    - Create
+                summary: Create
+                description: Create user
+                requestBody:
+                  description: Information sent in the validation method
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/body'
+                      example:
+                                correo: asdmurgo@gmail.com
+                                nombre: gabriel Murgo
+                                password: '123456'
+                                
+                  required: true
+                responses:
+                    200:
+                        description: OK
+                        content:
+                            application/json:
+                                example:
+                                        -   nombre: gabriel Murgo
+                                            correo: asdmurgo@gmail.com
+                                            estado: true
+                                            rol: USER_ROLE
+                                            uid: 6248359041e1361695c36aea
+                                            
+                    400:
+                        description: Bad Request
+                        content:
+                            application/json:
+                                example:
+                                    errors:
+                                      - msg: El password es obligatorio y debe ser mas de 6 letras
+                                        param: password
+                                        location: body
+                                    
+    /api/photos:
+      get:
+          tags:
+              - photos
+          description: Get all photos
+          responses:
+              200:
+                  description: OK
+                  content:
+                      application/json:
+                          example:
+                                  -   albumId: 1
+                                      id: 1
+                                      title: accusamus beatae ad facilis cum similique qui sunt
+                                      url: https://via.placeholder.com/600/92c952
+                                      thumbnailUrl: https://via.placeholder.com/150/92c952
+              401:
+                  description: Bad Request
+                  content:
+                      application/json:
+                          example:
+                               "msg": "No hay token en la peticion"
+    /api/posts:
+      get:
+          tags:
+              - posts
+          description: Get all posts
+          responses:
+              200:
+                  description: OK
+                  content:
+                      application/json:
+                          example:
+                                  -   userId: 1
+                                      id: 1
+                                      title: sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+                                      body: |-
+                                        quia et suscipit
+                                        suscipit recusandae consequuntur expedita et cum
+                                        reprehenderit molestiae ut ut quas totam
+                                        nostrum rerum est autem sunt rem eveniet architecto
+                                      
+              401:
+                  description: Bad Request
+                  content:
+                      application/json:
+                          example:
+                               "msg": "No hay token en la peticion"
+    /api/user:
+      get:
+          tags:
+              - user
+          description: Get all user
+          responses:
+              200:
+                  description: OK
+                  content:
+                      application/json:
+                          example:
+                                  - nombre: Andres Murgo
+                                    correo: andresmurgo@gmail.com
+                                    estado: true
+                                    rol: ADMIN_ROLE
+                                    uid: 62470531475a79052be123a6
+   
+components:
+    schemas:
+        body:
+            type: object
+            properties:
+                codigo:
+                    type: array
+                    items: 
+                        type: string
+
+x-version-control:
+    '0.1.0':
+        date: 02/04/2022
+        editor: SAN
+        description: 'The swagger is created, non-stable beta version of the API'
+        changes: []
