@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node dist/src/app.js",
     "dev": "ts-node src/app.ts",
-    "postinstall": "tsc",
+    "postinstall": "tsc -p tsconfig.json",
     "watch-node": "nodemon dist/app.js",
     "watch-ts": "tsc -w",
     "build": "tsc -p tsconfig.json"
