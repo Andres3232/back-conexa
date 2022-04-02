@@ -12,7 +12,6 @@ const server = express();
 server.use(express.json());
 
 server.use(cors());
-server.use( express.static('public') )
 
 server.get('/', (req: Request, res: Response) => res.send('Challenge Andres Murgo is up!!'));
 
