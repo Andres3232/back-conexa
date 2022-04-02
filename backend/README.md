@@ -14,12 +14,14 @@ _
 ```
 3. SWAGGER
 ```
- Cualquier duda esta documentada la api por un Swagger
+ Cualquier duda esta documentada la api por un Swagger:
+ https://back-adres-murgo-conexa.herokuapp.com/swagger
 
 ```
 4. POSTMAN
 ```
  Dejo la publicacion de la collection de Postman:
+ https://documenter.getpostman.com/view/16618387/UVyswaso
 
 ```
 - _El secret normalmente es un parametro unico que se va modificando para que no capturen nuestra session_
