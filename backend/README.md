@@ -14,8 +14,8 @@ _
 ```
 3. SWAGGER
 ```
- Cualquier duda esta documentada la api por un Swagger:
- 
+ Cualquier duda esta documentada la api por un Swagger
+
 ```
 4. POSTMAN
 ```
