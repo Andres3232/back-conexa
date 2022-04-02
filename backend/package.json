@@ -5,13 +5,11 @@
   "main": "index.js",
   "engines": { "node": "14.16.1" },
   "scripts": {
-    "start": "node dist/src/app.js",
-    "dev": "ts-node src/app.ts",
+    "start": "ts-node src/app.ts",
     "postinstall": "tsc",
     "watch-node": "nodemon dist/index.js",
     "watch-ts": "tsc -w",
-    "build": "tsc -p tsconfig.json",
-    "postinstalación": "tsc && mv -i -v public dist/ && rm -v -rf src"
+    "build": "tsc -p tsconfig.json"
   },
   "keywords": [],
   "author": "",
