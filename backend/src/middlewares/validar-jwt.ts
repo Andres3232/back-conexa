@@ -12,7 +12,7 @@ export const validarJWT = async (req: Request, res: Response, next: NextFunction
         return res.status(401).json({
             msg: 'No hay token en la peticion'
         });
-    }
+    };
 
     try {
      
@@ -20,21 +20,21 @@ export const validarJWT = async (req: Request, res: Response, next: NextFunction
         const { uid } = jwt.verify( token, environment.SECRETORPRIVATEKEY );
 
         // leer el usuario que corresponde al uid
-        const user = await userDAO.getOneID(uid)
+        const user = await userDAO.getOneID(uid);
 
         if ( !user ) {
         //@ts-ignore
             return res.status(401) ({
                 msg: ' -user no existe DB'
-            })
-        }
+            });
+        };
 
         //Verificar si el uid tiene estado en true
         if( !user.estado ) {
             return res.status(401).json({
                 msg: '-user con estado:false'
-            })
-        }
+            });
+        };
 
         //@ts-ignore
         req.user = user;
@@ -44,7 +44,7 @@ export const validarJWT = async (req: Request, res: Response, next: NextFunction
         console.log(error);
         res.status(401).json({
             msg: 'Token no valido'
-        })
-    }
+        });
+    };
 
-}
+};

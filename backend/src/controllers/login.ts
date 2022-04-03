@@ -18,7 +18,7 @@ const login =async (req: Request, res: Response, next: NextFunction): Promise<Re
             return res.status(400).json({
                 msg: 'El correo no es correcto'
             });
-        }
+        };
 
         // SI el usuario está activo
         //@ts-ignore
@@ -42,15 +42,15 @@ const login =async (req: Request, res: Response, next: NextFunction): Promise<Re
         res.json({
             user,
             token
-        })
+        });
 
     } catch (error) {
         console.log(error)
         res.status(500).json({
             msg: 'Hable con el administrador'
         });
-    }   
-}
+    } ;  
+};
 
 
-export {login}
+export {login};

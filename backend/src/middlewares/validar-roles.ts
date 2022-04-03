@@ -8,7 +8,7 @@ import { Request, Response, NextFunction } from 'express';
         return res.status(500).json({
             msg: 'Se quiere verificar el rol sin validar el token primero'
         });
-    }
+    };
     //@ts-ignore
 
     const { rol, nombre } = req.user;
@@ -17,8 +17,8 @@ import { Request, Response, NextFunction } from 'express';
         return res.status(401).json({
             msg: `${ nombre } no es administrador-No puede hacer esto`
         });
-    }
+    };
 
-    next()
+    next();
 }
 

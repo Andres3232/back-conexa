@@ -8,15 +8,15 @@ const getPosts =async (req: Request, res: Response, next: NextFunction): Promise
     
    try {
        
-    const Posts = await getPostsServices(req)
-    res.status(200).json({Posts})
+    const Posts = await getPostsServices(req);
+    res.status(200).json({Posts});
 
 
    } catch (error) {
       console.log(error);
        
    }
-}
+};
 
 
-export {getPosts}
+export {getPosts};

@@ -13,9 +13,9 @@ const getUser =async (req: Request, res: Response, next: NextFunction): Promise<
         
     } catch (error) {
         console.log(error);
-    }
+    };
 
-}
+};
 const userCreate =async (req: Request, res: Response, next: NextFunction): Promise<Response | void>=> {
     
     try {
@@ -30,7 +30,7 @@ const userCreate =async (req: Request, res: Response, next: NextFunction): Promi
         console.log(error);
     }
 
-}
+};
 
 
-export {userCreate,getUser}
+export {userCreate,getUser};

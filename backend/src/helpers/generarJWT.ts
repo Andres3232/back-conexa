@@ -18,11 +18,11 @@ export const generarJWT = ( uid = '' ) => {
                 resolve( token );
             }
 
-        })
+        });
 
-    })
+    });
 
-}
+};
 
 
 
